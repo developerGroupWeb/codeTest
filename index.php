@@ -4,8 +4,9 @@
     <meta charset="utf-8"/>
     <meta name="description" content="Une formation compelte sur Jquery"/>
     <meta http-equiv="content-language" content="fr"/>
-    <link rel="stylesheet" href="css/styles.css"/>
-    <title>Maitriser Jquery</title>
+    <link rel="stylesheet" href="slyle.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Code test</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
@@ -67,6 +68,24 @@
     </p>
     <button class="nextfiled" id="3">Next</button>
 </div>
+
+<br/><br/><br/>
+
+<div id="addInput">
+    <table>
+        <tr>
+            <td><input type="text" name="name[]" id="name" placeholder="Enter your name"/></td>
+            <td><button id="add">Add</button></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
 
 <script src="hideShow.js"></script>
 </body>
