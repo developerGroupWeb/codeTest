@@ -69,7 +69,12 @@
     <button class="nextfiled" id="3">Next</button>
 </div>
 
-<br/><br/><br/>
+<div id="showNext">
+
+    <input type="text" name="name[]" id="name" placeholder="Enter your name"/>
+    <button>Add</button>
+
+</div>
 
 <div id="addInput">
     <table>

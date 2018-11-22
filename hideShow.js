@@ -1,16 +1,22 @@
 $(function(){
    
-   $('body #hide0').nextUntil('#addInput').hide();
+   $('body #hide0').nextUntil('#addInput').add('#showNext').hide();
 
         $(document).on('click', '.nextfiled', function(){
 
+            $(this).parent().next().show();
+            $(this).parent().hide();
+
+            /*
             var intId = $(this).attr('id');
-            var buttonShow = parseFloat(intId, 10) + 1;
-            var buttonHide = parseFloat(intId, 10);
-            //alert(button)
-            $('#hide'+ buttonShow +'').show();
-            $('#hide'+ buttonHide +'').hide();
-        })
+            var nbButtonShow = parseFloat(intId, 10) + 1;
+            var nbButtonHide = parseFloat(intId, 10);
+
+            $('#hide'+ nbButtonShow +'').show();
+            $('#hide'+ nbButtonHide +'').hide();
+
+            */
+        });
 
 
    var i = 1;
