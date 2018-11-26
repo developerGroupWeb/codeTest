@@ -84,11 +84,25 @@
         </tr>
     </table>
 </div>
+<br/><br/>
 
+<img src="images/chemise-a.jpg" id="img"><br/><br/>
+<img src="images/chemise-a.jpg">
+<img src="images/chemise-b.jpg">
+<img src="images/chemise-c.jpg">
+<img src="images/chemise-d.jpg">
 
+<br/><br/><br/><br/>
 
+<form method="post" action="" id="testSubmit">
+    <input type="text" id="name" placeholder="Enter your name"/><span class="error"></span>
+    <input type="email" id="email" placeholder="Enter your email"/><span class="error"></span>
+    <input type="password" id="password" placeholder="Enter your password"/><span class="error"></span>
+    <input type="password" id="password_confirm" placeholder="Confirm your password"/><span class="error"></span><br/>
+    <button type="submit">Send</button>
+</form>
 
-
+<br/><br/><br/>
 
 
 

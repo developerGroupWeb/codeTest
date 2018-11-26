@@ -4,6 +4,7 @@ $(function(){
 
         $(document).on('click', '.nextfiled', function(){
 
+            //alert($(this).parent().length)
             $(this).parent().next().show();
             $(this).parent().hide();
 
@@ -36,4 +37,176 @@ $(function(){
    });
 
 
+    var Person = {
+
+        Name : 'Jack',
+        Age  : '27',
+        Email : 'jacknouatin@yahoo.fr',
+        Phone : '+380633474129',
+        Country : 'Ukraine',
+        City : 'Dnepr',
+    };
+
+    $.each(Person, function (key, value) {
+
+        //alert(key + ' : ' + value)
+    })
+
+
+
+// Gallery des photos
+
+    $(document).on('click', 'img', function(){
+
+        var src   = $(this).attr('src');
+        var slice = src.split('/');
+        var img   = slice[1];
+        var path  = "images/"+img;
+
+        $('#img').attr('src', path);
+
+    });
+
+
+
+
+// Traitement de formulaire
+
+    var error_name     = false;
+    var error_email    = false;
+    var error_password = false;
+    var error_confirm  = false;
+
+
+    var idEmail    = $('#testSubmit #email');
+    var idPassword = $('#testSubmit #password');
+    var idConfirm  = $('#testSubmit #password_confirm');
+    var idName     = $('#testSubmit #name');
+
+    function alertMessage(id, errorClass, text){
+
+        return $(id).next(errorClass).html(text).show();
+    }
+
+
+    $(document).on('blur', '#name', function () {
+
+        var name = idName.val();
+
+        if (name == '') {
+
+            alertMessage(this, '.error', 'This filed is required');
+            error_name = false;
+
+        } else if (name.length < 5) {
+
+            alertMessage(this, '.error', 'Type 5 characters minimum');
+            error_name = false;
+
+        } else {
+
+            $(this).next('.error').hide();
+            error_name = true;
+        }
+
+    });
+
+    $(document).on('blur', '#email', function () {
+
+        var filter = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var email = idEmail.val();
+
+        if (email == '') {
+
+            alertMessage(this, '.error', 'This filed is required');
+            error_email = false;
+
+        } else if (!filter.test(email)) {
+
+            alertMessage(this, '.error', 'Invalid email');
+            error_email = false;
+
+        } else {
+
+            $(this).next('.error').hide();
+            error_email = true;
+        }
+    });
+
+    $(document).on('blur', '#password', function () {
+
+        var password = idPassword.val();
+
+        if(password == ''){
+
+            alertMessage(this, '.error', 'This filed is required');
+            error_password = false;
+
+        }else if(password.length < 8){
+
+            alertMessage(this, '.error', 'Type 8 characters minimum');
+            error_password = false;
+
+        }else{
+
+            $(this).next('.error').hide();
+            error_password = true;
+        }
+
+    });
+
+    $(document).on('blur', '#password_confirm', function () {
+
+        var confirm = idConfirm.val();
+        var password = idPassword.val();
+
+        if(confirm != password){
+
+            alertMessage(this, '.error', 'Password aren\'t identical');
+            error_confirm = false;
+
+        }else{
+
+            $(this).next('.error').hide();
+            error_confirm = true;
+        }
+
+    });
+
+
+    
+    $(document).on('submit', '#testSubmit', function () {
+
+        if(error_name == false || error_email == false || error_password == false || error_confirm == false){
+            return false
+        }else{
+            return true;
+        }
+
+    });
+
+
+
+
+
+    // La function qui va afficher le fichier selectionner avant l'envoi
+
+    $(window).load(function(){
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#profilCv').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function(){
+            readURL(this);
+        });
+    });
 });
