@@ -1,5 +1,6 @@
 $(function(){
-   
+
+
    $('body #hide0').nextUntil('#addInput').add('#showNext').hide();
 
         $(document).on('click', '.nextfiled', function(){
@@ -50,7 +51,7 @@ $(function(){
     $.each(Person, function (key, value) {
 
         //alert(key + ' : ' + value)
-    })
+    });
 
 
 
@@ -174,7 +175,7 @@ $(function(){
     });
 
 
-    
+
     $(document).on('submit', '#testSubmit', function () {
 
         if(error_name == false || error_email == false || error_password == false || error_confirm == false){
@@ -184,6 +185,61 @@ $(function(){
         }
 
     });
+
+
+
+    // TRANSFORMER UNE CHAINE D UN CHAMP EN MAJUSCULE AUTOMATIQUE ET SUPPRIMER UN CARACTERE NON AUTORISER DANS LA CHAINE
+
+    var idFirstName = $('#first-name');
+    var idSurName   = $('#surname');
+
+    $(document).on('keyup', '#first-name, #surname', function () {
+
+        var firstName = idFirstName.val();
+        var surName   = idSurName.val();
+        var filter = /^[aA-zZ -]+$/;
+
+        if(this.id == 'first-name'){
+
+            var lastLetter = firstName.slice(-1);
+            var firstLetter = firstName.slice(0, 1);
+            var upper = firstName.toUpperCase();
+
+            if((filter.test(lastLetter))){
+
+                $(this).val(upper);
+                $('.error').hide();
+
+            }else{
+
+               var newFirstName = firstName.replace(lastLetter, '');
+               $(this).val(newFirstName);
+               $(this).next('.error').html('Caractère non autorisé').show();
+            }
+
+
+        }else{
+
+            var lastLette = surName.slice(-1);
+            var uppe      = surName.toUpperCase();
+
+            if(filter.test(lastLette)){
+
+                $(this).val(uppe);
+                $('.error').hide();
+
+            }else{
+
+                var newSurName = surName.replace(lastLette, '');
+                $(this).val(newSurName);
+                $(this).next('.error').html('Caractère non autorisé').show();
+            }
+        }
+
+
+
+    });
+
 
 
 

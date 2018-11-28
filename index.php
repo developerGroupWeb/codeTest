@@ -91,18 +91,31 @@
 <img src="images/chemise-b.jpg">
 <img src="images/chemise-c.jpg">
 <img src="images/chemise-d.jpg">
+<br/><br/><br/><br/>
 
+<h3> TRANSFORMER UNE CHAINE D UN CHAMP EN MAJUSCULE  ET SUPPRIMER UN CARACTERE NON AUTORISER AUTOMATIQUE DANS LA CHAINE</h3>
+
+<form method="post" action="" id="automatic">
+    <input type="text" name="name" id="first-name" placeholder="Enter your first name"/>
+    <span class="error" style="color: red; font-style: italic"></span>
+    <input type="text" name="name" id="surname" placeholder="Enter your surname"/>
+    <span class="error" style="color: red; font-style: italic"></span>
+    <br/>
+    <button>Send</button>
+</form>
 <br/><br/><br/><br/>
 
 <form method="post" action="" id="testSubmit">
-    <input type="text" id="name" placeholder="Enter your name"/><span class="error"></span>
-    <input type="email" id="email" placeholder="Enter your email"/><span class="error"></span>
-    <input type="password" id="password" placeholder="Enter your password"/><span class="error"></span>
-    <input type="password" id="password_confirm" placeholder="Confirm your password"/><span class="error"></span><br/>
+    <input type="text" id="name" placeholder="Enter your name"/><span class="error" style="color: red; font-style: italic"></span>
+    <input type="email" id="email" placeholder="Enter your email"/><span class="error" style="color: red; font-style: italic"></span>
+    <input type="password" id="password" placeholder="Enter your password"/><span class="error" style="color: red; font-style: italic"></span>
+    <input type="password" id="password_confirm" placeholder="Confirm your password"/><span class="error" style="color: red; font-style: italic"></span><br/>
     <button type="submit">Send</button>
 </form>
 
 <br/><br/><br/>
+
+
 
 
 
