@@ -97,7 +97,7 @@
 
 <form method="post" action="" id="automatic">
     <input type="text" name="name" id="first-name" placeholder="Enter your first name"/>
-    <span class="error" style="color: red; font-style: italic"></span>
+    <span class="error" style="color: red; font-style: italic"></span><i></i>
     <input type="text" name="name" id="surname" placeholder="Enter your surname"/>
     <span class="error" style="color: red; font-style: italic"></span>
     <br/>
@@ -114,6 +114,24 @@
 </form>
 
 <br/><br/><br/>
+
+
+<h1>Jquery Slider Gallery</h1>
+
+<div class="slider-outer">
+
+   <img src='images/prev.png' class='prev' alt='prev'/>
+   
+      <div class='slider-inner'>
+	     <img src='images/chemise-a.jpg' class='active'/>
+	     <img src='images/chemise-b.jpg' />
+	     <img src='images/chemise-c.jpg' />
+	     <img src='images/chemise-d.jpg' />
+	  </div>
+   
+   <img src='images/next.png' class='next' alt='next'/>
+
+</div>
 
 
 

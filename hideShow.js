@@ -186,62 +186,99 @@ $(function(){
 
     });
 
+    // ANNULATION D'EVENEMENT PAR DEFAUT DE LA TOUCHE ENTREE DANS UN CHAMP INPUT
+
+            $(document).on('keupress', '#input', function (event) {
+
+                if(event.which == 13 || event.keyCode == 13){
+                    event.preventDefault();
+                }
+            });
+
 
 
     // TRANSFORMER UNE CHAINE D UN CHAMP EN MAJUSCULE AUTOMATIQUE ET SUPPRIMER UN CARACTERE NON AUTORISER DANS LA CHAINE
 
+    var nom = 'ja2ck8';
+    var ta = nom.split('');
+    var filter    = /^[aA-zZ -]+$/;
+    for(var i = 0; i < nom.length; i++){
+
+        if(!filter.test(ta[i])){
+
+            var newnom = nom.replace(ta[i], '');
+            //alert(newnom)
+        }
+    }
+
+
     var idFirstName = $('#first-name');
     var idSurName   = $('#surname');
+    var filter    = /^[aA-zZ -]+$/;
 
     $(document).on('keyup', '#first-name, #surname', function () {
 
-        var firstName = idFirstName.val();
-        var surName   = idSurName.val();
-        var filter = /^[aA-zZ -]+$/;
-
         if(this.id == 'first-name'){
 
-            var lastLetter = firstName.slice(-1);
-            var firstLetter = firstName.slice(0, 1);
-            var upper = firstName.toUpperCase();
+            var firstName = idFirstName.val();
+            var upperName = firstName.toUpperCase();
 
-            if((filter.test(lastLetter))){
+            $(this).val(upperName);
 
-                $(this).val(upper);
-                $('.error').hide();
+            var tabName   = firstName.split('');
 
-            }else{
+            for(var i = 0; i < tabName.length; i++){
 
-               var newFirstName = firstName.replace(lastLetter, '');
-               $(this).val(newFirstName);
-               $(this).next('.error').html('Caractère non autorisé').show();
+                $('i').html(tabName[i] + '-');
+                if(filter.test(tabName[i])){
+
+                    $('.error').hide();
+
+                }else{
+
+                    $(this).next('.error').html('Character invalid').show();
+                }
             }
+
+
 
 
         }else{
 
-            var lastLette = surName.slice(-1);
-            var uppe      = surName.toUpperCase();
-
-            if(filter.test(lastLette)){
-
-                $(this).val(uppe);
-                $('.error').hide();
-
-            }else{
-
-                var newSurName = surName.replace(lastLette, '');
-                $(this).val(newSurName);
-                $(this).next('.error').html('Caractère non autorisé').show();
-            }
+            var surName      = idSurName.val();
+            var upperSurName = surName.toUpperCase();
+            $(this).val(upperSurName);
         }
-
-
 
     });
 
 
-
+	// SLIDER GALLERY JQUERY
+	
+	$('.next').on('click', function(){
+		
+		var currentImg  = $('.active');
+		var nextImg     = currentImg.next();
+		
+		if(nextImg.length){
+			
+			currentImg.removeClass('active').css('z-index', -10);
+			nextImg.addClass('active').css('z-index', 10);
+		}
+		//alert('next')
+	});
+	$('.prev').on('click', function(){
+		
+		var currentImg  = $('.active');
+		var prevImg     = currentImg.prev();
+		
+		if(prevImg.length){
+			
+			currentImg.removeClass('active').css('z-index', -10);
+			prevImg.addClass('active').css('z-index', 10);
+		}
+		//alert('next')
+	});
 
 
 

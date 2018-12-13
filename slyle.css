@@ -21,3 +21,47 @@ form input{
     display: block;
     margin-top: 20px ;
 }
+
+.prev, .next{
+	
+	width: 50px;
+	height: 20px;
+	cursor: pointer;
+	margin-top: 130px;
+	float: left;
+}
+
+.prev{
+	
+	z-index: 100;
+	margin-right: -45px;
+	position: relative;
+}
+.next{
+	
+	z-index: 100;
+	margin-left: -45px;
+	position: relative;
+}
+
+.slider-inner{
+	
+	width: 500px;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	padding: 3px;
+	border: 1px solid #666;
+}
+.slider-inner img{
+	
+	display: none;
+	width: 500px;
+	height: 300px;
+}
+.slider-inner img.active{
+	
+	display: inline-block;
+	
+}
