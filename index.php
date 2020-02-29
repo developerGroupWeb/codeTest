@@ -8,8 +8,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Code test</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </head>
 <body>
+
+
+
+
+<div>
+    <h1>Upload file in Jquery</h1>
+    <form method="post" action="" enctype="multipart/form-data" id="form-upload">
+        <div class="form-group">
+            <label for="file">Example file input</label>
+            <input type="file" name="file" class="form-control-file d-none" id="file">
+            <span class="text-danger error font-italic"></span>
+        </div>
+        <button class="btn btn-primary">Upload</button>
+    </form>
+</div>
+
+<hr/>
 
 <div id="hide0">
 
@@ -121,22 +139,26 @@
 <div class="slider-outer">
 
    <img src='images/prev.png' class='prev' alt='prev'/>
-   
+
       <div class='slider-inner'>
 	     <img src='images/chemise-a.jpg' class='active'/>
 	     <img src='images/chemise-b.jpg' />
 	     <img src='images/chemise-c.jpg' />
 	     <img src='images/chemise-d.jpg' />
 	  </div>
-   
+
    <img src='images/next.png' class='next' alt='next'/>
 
 </div>
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 
 <script src="hideShow.js"></script>
+<script src="upload.js"></script>
 </body>
 </html>
